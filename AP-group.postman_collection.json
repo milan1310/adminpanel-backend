@@ -1,0 +1,625 @@
+{
+	"info": {
+		"_postman_id": "5b680c6c-f903-448d-a8d8-8ba63b98c467",
+		"name": "AP-group",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17103801"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"admin@admin.com\",\n    \"password\":\"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create new companie record",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "logo",
+							"type": "file",
+							"src": "/Users/milan/Downloads/profile-icon.png"
+						},
+						{
+							"key": "name",
+							"value": "Meet",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "meet@gmail.coms",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "https://htmlvalley.tech",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/companie/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findcompanie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"meet\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/companie/findcompanie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"findcompanie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read many companies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"names\":[\"Milan\",\"Riddhi\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/companie/readmanycompanies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"readmanycompanies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read All companies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/companie/readallcompanies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"readallcompanies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update single companie record",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"meet\",\n    \"website\":\"https://milanasd.co\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/companie/updatrecord",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"updatrecord"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single Companie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"meet\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/companie/deleteonecompanie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"deleteonecompanie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete many companies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"names\":[\"meet\",\"milna\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/companie/deletemanycompanies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"companie",
+						"deletemanycompanies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create new employee record Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\":\"riddhi\",\n    \"lastname\":\"dobariya\",\n    \"email\":\"riddhi@gmail.com\",\n    \"phone\":95234717459,\n    \"companie\":\"63e53e41331eb957b184323b\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employee/addemployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"addemployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"meet@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employee/readsingleemployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"readsingleemployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read many employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"emails\":[\"meet@gmail.com\",\"milan@gmail.com\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employee/readmanyemoloyee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"readmanyemoloyee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read All employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/employee/readallemployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"readallemployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update single employee record",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"meet@gmail.com\",\n    \"lastname\":\"khunt\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employee/updatrecord",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"updatrecord"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"riddhi@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employee/deleteoneemployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"deleteoneemployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete many employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"emails\":[\"meet@gmail.com\",\"milna@gmail.com\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employee/deletemanyemployies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employee",
+						"deletemanyemployies"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U0ZWI4NGVlYTc0ODk3MTVmNzBjYjkiLCJpYXQiOjE2NzU5NDc1NjUsImV4cCI6MTY3ODUzOTU2NX0.n_wXx-s8AjK_-TO-DtmSMZYULPrxzXVbgioZKzxKRf0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
